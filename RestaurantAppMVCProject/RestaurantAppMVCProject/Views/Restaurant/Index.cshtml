@@ -1,0 +1,21 @@
+﻿@model IEnumerable<RestaurantAppMVCProject.Models.Restaurant>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Restaurant Names</h2>
+
+<div class="container">
+    <ul>
+        @foreach (var item in Model)
+        {
+
+        <a href="/Restaurant/Details/@item.Id"><li>@item.Name</li></a>
+        }
+
+    </ul>
+
+
+    </div>
+
+

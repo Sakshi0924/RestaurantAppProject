@@ -1,0 +1,29 @@
+﻿@model RestaurantEFDbFirstApproach.Models.RestaurantTable
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Restaurant</h2>
+
+<form action="/Home/Edit/@Model.RestaurantId" method="post">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="RestaurantName" class="font-weight-bold">Restaurant Name</label>
+            <input type="hidden" name="RestaurantId" class="form-control" value="@Model.RestaurantId"/>
+            <input type="text" name="Name" class="form-control" id="RestaurantName" placeholder="RestaurantName...." value="@Model.Name" />
+        </div>
+        <div class="form-group col-md-6">
+            <label for="Cuisine" class="font-weight-bold">Cusine</label>
+            <select class="form-control" id="Cuisine" name="Cusine">
+               
+                <option value="None">None</option>
+                <option value="Indian">Indian</option>
+                <option value="Italian">Italian</option>
+                <option value="French">French</option>
+            </select>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Edit Restaurant</button>
+    <a class="btn btn-dark" href="/Home/Index">Cancel</a>
+</form>
+
